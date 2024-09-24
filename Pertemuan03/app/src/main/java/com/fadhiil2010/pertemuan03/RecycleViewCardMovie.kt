@@ -53,18 +53,18 @@ class RecycleViewCardMovie : AppCompatActivity() {
 
 
     private fun prepareMovieList() {
-        var movie = ModelMovie("Avatar", R.drawable.avatar)
+        var movie = ModelMovie("Avatar", R.drawable.avatar, "29 September 2024", getString(R.string.sinopsis1))
         movieList.add(movie)
 
-        movie = ModelMovie("Batman", R.drawable.batman)
+        movie = ModelMovie("Batman", R.drawable.batman, "Tanggal Rilis : 29 September 2024", getString(R.string.sinopsis2))
         movieList.add(movie)
-        movie = ModelMovie("End Game", R.drawable.end_game)
+        movie = ModelMovie("End Game", R.drawable.end_game, "Tanggal Rilis : 29 September 2024", getString(R.string.sinopsis3))
         movieList.add(movie)
-        movie = ModelMovie("Venom", R.drawable.venom)
+        movie = ModelMovie("Venom", R.drawable.venom, "Tanggal Rilis : 29 September 2024", getString(R.string.sinopsis1))
         movieList.add(movie)
-        movie = ModelMovie("Spiderman", R.drawable.spider_man)
+        movie = ModelMovie("Spiderman", R.drawable.spider_man, "Tanggal Rilis : 29 September 2024", getString(R.string.sinopsis2))
         movieList.add(movie)
-        movie = ModelMovie("Inception", R.drawable.inception)
+        movie = ModelMovie("Inception", R.drawable.inception, "Tanggal Rilis : 29 September 2024", getString(R.string.sinopsis3))
         movieList.add(movie)
 
 
@@ -75,6 +75,8 @@ class RecycleViewCardMovie : AppCompatActivity() {
         val intent = Intent(this, DetailPage::class.java) // Pastikan kelas "PhotoDetail" benar
         intent.putExtra("imageResId", movieList[position].image) // Mengirim imageResId ke Activity PhotoDetail
         intent.putExtra("title", movieList[position].title)
+        intent.putExtra("tanggal", movieList[position].tanggal) // Mengirim imageResId ke Activity PhotoDetail
+        intent.putExtra("sinopsis", movieList[position].sinopsis)
         startActivity(intent)
     }
 }
